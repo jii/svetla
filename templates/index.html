@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NOiSE 220 Ovládání</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	{% load static %}
+    <!-- Le styles -->
+    <link href={% static "bootstrap/css/bootstrap.css" %} rel="stylesheet">
+    <link href={% static "bootstrap/css/bootstrap-responsive.css" %} rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href={% static "css/custom.css" %} rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="{{ STATIC_URL }}bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}bootstrap/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}bootstrap/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}bootstrap/ico/apple-touch-icon-114x114.png">
+
+
+</head>
+
+<body data-spy="scroll" data-target=".subnav">
+
+
+<div class="container" style="width: 800px !important;">
+
+<br>
+<div class="row-fluid">
+    <div class="span12">
+        <h1><a href="/" class="font1">NOiSE 220 ovládání</a></h1>
+    </div>
+</div>
+
+
+
+<div class="row-fluid">
+    <div class="span6">
+        <h2 class="font2">Zahrada</h2>
+		{% if Stav12 %}
+			    <p style="margin-top:10px;">
+                <a href="./12/0/"><button class="btn btn-large btn-success" type="button">Rožni</button></a>
+            </p>
+
+            
+        {% else %}
+		
+				<p style="margin-top: 6px;">
+                <span class="label label-success" style="font-weight: normal !important;">Světlo je zapnuté xxx  minut)</span>
+            </p>
+            <p style="margin-top: 16px;">
+                <a href="./12/1/"><button class="btn btn-large btn-warning" type="button">Zhasni</button></a>
+            </p>
+		
+		
+
+        {% endif %}
+        <div style="height:8px;"></div>
+    </div>
+    
+</div>
+
+
+
+<div class="row-fluid">
+    <div class="span6">
+        <h2 class="font2">Jezírko</h2>
+                {% if Stav13 %}
+			    <p style="margin-top:10px;">
+                <a href="./13/0/"><button class="btn btn-large btn-success" type="button">Rožni</button></a>
+            </p>
+
+            
+        {% else %}
+		
+				<p style="margin-top: 6px;">
+                <span class="label label-success" style="font-weight: normal !important;">Světlo je zapnuté xxx  minut</span>
+            </p>
+            <p style="margin-top: 16px;">
+                <a href="./13/1/"><button class="btn btn-large btn-warning" type="button">Zhasni</button></a>
+            </p>
+		
+		
+
+        {% endif %}
+    </div>
+
+    
+</div>
+
+<div class="row-fluid">
+    <div class="span6">
+        <h2 class="font2">Zavlažování</h2>
+{% if Stav11 %}
+			    <p style="margin-top:10px;">
+                <a href="./11/0/"><button class="btn btn-large btn-success" type="button">Zapni</button></a>
+            </p>
+
+            
+        {% else %}
+		
+				<p style="margin-top: 6px;">
+                <span class="label label-success" style="font-weight: normal !important;">Voda už stříká xxx  minut</span>
+            </p>
+            <p style="margin-top: 16px;">
+                <a href="./11/1/"><button class="btn btn-large btn-warning" type="button">Vypni</button></a>
+            </p>
+		
+		
+
+        {% endif %}
+    </div>
+
+      <input type="datetime-local" name="bdaytime">
+</div>
+
+</div>
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src={% static "bootstrap/js/bootstrap.js" %}></script>
+ 
+</body>
+</html>
+
+<script src={% static "js/index.js" %}></script>
+
